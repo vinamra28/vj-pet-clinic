@@ -1,11 +1,11 @@
 package com.vinamra.vjpetclinic.services.map;
 
 import com.vinamra.vjpetclinic.model.Owner;
-import com.vinamra.vjpetclinic.services.CrudService;
+import com.vinamra.vjpetclinic.services.OwnerService;
 
 import java.util.Set;
 
-public class OwnerServiceMap extends AbstractMapService<Owner,Long> implements CrudService<Owner,Long>
+public class OwnerServiceMap extends AbstractMapService<Owner,Long> implements OwnerService
 {
     @Override
     public Set<Owner> findAll() {
@@ -32,5 +32,10 @@ public class OwnerServiceMap extends AbstractMapService<Owner,Long> implements C
     public void deleteById(Long id)
     {
         super.deleteById(id);
+    }
+
+    @Override
+    public Owner findByLastName(String lastName) {
+        return null;
     }
 }
