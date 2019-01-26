@@ -1,8 +1,10 @@
 package com.vinamra.vjpetclinic.bootstrap;
 
 import com.vinamra.vjpetclinic.model.Owner;
+import com.vinamra.vjpetclinic.model.PetType;
 import com.vinamra.vjpetclinic.model.Vet;
 import com.vinamra.vjpetclinic.services.OwnerService;
+import com.vinamra.vjpetclinic.services.PetTypeService;
 import com.vinamra.vjpetclinic.services.VetService;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
@@ -13,15 +15,26 @@ public class DataLoader implements CommandLineRunner
 
     private final OwnerService ownerService;
     private final VetService vetService;
+    private final PetTypeService petTypeService;
+
     //@Autowired not required after spring version 4.2
-    public DataLoader(OwnerService ownerService, VetService vetService) {
+    public DataLoader(OwnerService ownerService, VetService vetService,PetTypeService petTypeService) {
         this.ownerService = ownerService;
         this.vetService = vetService;
+        this.petTypeService = petTypeService;
     }
 
     @Override
     public void run(String... args) throws Exception
     {
+
+        PetType dog = new PetType();
+        dog.setName("Dog");
+        PetType savedDogPetType = petTypeService.save(dog);
+
+        PetType cat = new PetType();
+        cat.setName("Cat");
+        PetType savedCatPetType = petTypeService.save(cat);
 
         //we need not to set the id over here bcz in our AbstractMapService class we have generated the id value automatically
         Owner owner1 = new Owner();
