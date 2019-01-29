@@ -1,10 +1,7 @@
 package com.vinamra.vjpetclinic.bootstrap;
 
 import com.vinamra.vjpetclinic.model.*;
-import com.vinamra.vjpetclinic.services.OwnerService;
-import com.vinamra.vjpetclinic.services.PetTypeService;
-import com.vinamra.vjpetclinic.services.SpecialtyService;
-import com.vinamra.vjpetclinic.services.VetService;
+import com.vinamra.vjpetclinic.services.*;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
@@ -18,13 +15,16 @@ public class DataLoader implements CommandLineRunner
     private final VetService vetService;
     private final PetTypeService petTypeService;
     private final SpecialtyService specialtyService;
+    private final VisitService visitService;
 
     //@Autowired not required after spring version 4.2
-    public DataLoader(OwnerService ownerService, VetService vetService, PetTypeService petTypeService, SpecialtyService specialtyService) {
+    public DataLoader(OwnerService ownerService, VetService vetService, PetTypeService petTypeService,
+                      SpecialtyService specialtyService, VisitService visitService) {
         this.ownerService = ownerService;
         this.vetService = vetService;
         this.petTypeService = petTypeService;
         this.specialtyService = specialtyService;
+        this.visitService = visitService;
     }
 
     @Override
@@ -91,6 +91,13 @@ public class DataLoader implements CommandLineRunner
         owner2.getPets().add(fioansCat);
 
         ownerService.save(owner2);
+
+        Visit catVisit = new Visit();
+        catVisit.setPet(fioansCat);
+        catVisit.setDate(LocalDate.now());
+        catVisit.setDescription("Sneezy kitty");
+
+        visitService.save(catVisit);
 
         System.out.println("Loading owners.....");
 
