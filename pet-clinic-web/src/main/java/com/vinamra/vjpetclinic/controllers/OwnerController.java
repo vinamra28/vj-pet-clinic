@@ -8,8 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 //prefixing the route at the class level to avoid writing similar again and again
 @RequestMapping("/owners")
 @Controller
-public class OwnerController
-{
+public class OwnerController {
 
     //declared final over here so that object cannot be changed
     private final OwnerService ownerService;
