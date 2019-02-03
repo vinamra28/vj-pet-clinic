@@ -1,6 +1,6 @@
-# vj-pet-clinic
-
 [![CircleCI](https://circleci.com/gh/vinamraj/vj-pet-clinic.svg?style=svg)](https://circleci.com/gh/vinamraj/vj-pet-clinic)
+
+# vj-pet-clinic
 
 The following project is based on spring-boot and hibernate. Dependencies used are actuator, lombok, JPA, Thymeleaf.
 The following project is linked with H2 database and MySQL database
