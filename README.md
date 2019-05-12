@@ -13,3 +13,7 @@ mvn release:prepare
 mvn release:perform
 
 To run the project just run **localhost:8080/index.html** on the browser after starting the application
+
+# License
+
+The Spring PetClinic sample application is released under version 2.0 of the [Apache License](http://www.apache.org/licenses/LICENSE-2.0).

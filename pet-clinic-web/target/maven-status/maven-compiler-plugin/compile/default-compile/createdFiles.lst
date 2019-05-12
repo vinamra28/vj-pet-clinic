@@ -1,0 +1,5 @@
+com\vinamra\vjpetclinic\VjPetClinicApplication.class
+com\vinamra\vjpetclinic\bootstrap\DataLoader.class
+com\vinamra\vjpetclinic\controllers\IndexController.class
+com\vinamra\vjpetclinic\controllers\OwnerController.class
+com\vinamra\vjpetclinic\controllers\VetController.class
