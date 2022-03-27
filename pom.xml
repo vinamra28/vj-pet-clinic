@@ -49,10 +49,16 @@
     </build>
 
     <scm>
-        <developerConnection>scm:git:https://github.com/vinamraj/vj-pet-clinic.git</developerConnection>
+        <developerConnection>scm:git:https://github.com/vinamra28/vj-pet-clinic.git</developerConnection>
         <tag>HEAD</tag>
     </scm>
 
-    <!--hello-->
+    <distributionManagement>
+        <repository>
+            <id>github</id>
+            <name>GitHub Packages</name>
+            <url>https://maven.pkg.github.com/vinamra28/vj-pet-clinic</url>
+        </repository>
+  </distributionManagement>
 
 </project>
